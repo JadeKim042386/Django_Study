@@ -114,5 +114,5 @@ Note: [ORM 이란?](https://gmlwjd9405.github.io/2019/02/01/orm.html)
 
 [점프 투 장고](https://wikidocs.net/78004)  
 [mozilla_Django 소개](https://developer.mozilla.org/ko/docs/Learn/Server-side/Django/Introduction#%EC%9A%94%EC%B2%AD%EC%9D%84_%EC%95%8C%EB%A7%9E%EC%9D%80_%EB%B7%B0%EB%A1%9C_%EC%A0%84%EB%8B%AC_urls.py)  
-[Django 01 - Introduction, 동작원리, 기본설정](https://tothefullest08.github.io/django/2019/02/11/django01/)
+[Django 01 - Introduction, 동작원리, 기본설정](https://tothefullest08.github.io/django/2019/02/11/django01/)  
 [Python django vs Flask. web framework 무엇을 선택해야할까?](https://wendys.tistory.com/172)
