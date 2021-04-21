@@ -1,15 +1,12 @@
 목차
 =====
 [1. What is Django?](#What-is-Django?)  
-[출처](#출처)
+[2. Django vs Flask](#Django-vs-Flask)  
+
+[출처](#출처)  
 
 
-
-
-Jump To Django
-==============
-
-* What is Django?
+# What is Django?
 
   1. 장고는 웹 프로그램을 쉽고 빠르게 만들어 주는 웹 프레임워크다.
   
@@ -69,9 +66,52 @@ Jump To Django
     3. Model (데이터 관리)은 Database에서 1번 강의를 찾아서 View (중간관리자)에 전달
     4. View (중간관리자)는 1번강의를 Template에 전달하여, HTML 파일과 조합하여 화면을 사용자에게 전달
     
+# Django vs Flask
 
-출처
-=======
+Python에서 django와 Flask는 가장 널리 사용되는 오픈소스 기반 웹 프레임워크입니다.  
+django는 Python의 full stack web framework인 반면 Flask는 가볍고 확장 가능한 web framework입니다. 즉 django는 기능이 훨씬 뛰어나지만 복
+잡하고, Flask는 매우 단순하고 가볍습니다.
+
+## Django
+
+django는 python기반 web framework 중 가장 많이 사용되고 있는 web framework이며, Flask보다 약 10배 많은 코드 라인으로 개발이 되어있습니다. (code 290,087 
+lines) 구글 앱 엔진에서 django를 사용하게 되면서 많은 사람들이 사용하게 되었으며, web application을 개발하기 위한 대부분의 기능들이 갖추어져 있기 때문에 외
+부 도구 및 라이브러리를 사용하지 않고도 어느 정도 규모가 있는 web application 개발에도 문제가 없습니다.  
+
+django는 ORM (Object relational mapping) 기능이 내장되어있습니다.  
+객체 관계 매핑이라고도 하며 데이터베이스 시스템과 데이터 모델 클래스를 연결하는 역할을 합니다.  
+ORM을 이용해 다양한 데이터베이스를 지원하고 있으며, SQL 의존적인 코드를 벗어나 생산적인 코딩이 가능하게 되어 유지보수가 편하게 됩니다.  
+
+django는 자동으로 관리자 화면을 구성해줍니다.  
+django는 데이터베이스에 대한 관리 기능을 위하여 프로젝트를 시작하는 시점에 관리자 화면을 제공합니다. 이런 관리자 화면을 이용하여 web application에서 사용하는 
+데이터들을 쉽게 생성하거나 변경이 가능합니다.  
+
+# Flask
+
+Flask는 Python의 Micro framework를 기반으로 단순하고 매우 가벼운 web framework입니다.  
+URL 라우팅, Template, Cookie, Debugger 및 개발서버 등 기본 기능만을 제공합니다.  
+그러기 때문에 django의 1/10밖에 안 되는 코드 (code 28,677 lines)로 구현되어있으며, 직접 소스코드를 분석하여 내부적으로 일어나는 확인할 수 있으며 권장되고 있습니다.  
+Flask의 구조는 크게 WSGI용 Library인 Werkzeug와 HTML 렌더링 엔진인 Jinja2 template으로 구성되어있습니다.  
+즉 Flask는 기본 기능 제공에 다양한 확장 모듈을 이용할 수 있는 구조 입니다.  
+django에서는 특수한경우 내부 로직에서 어떠한 기능을 지원하지 않거나 장애가 발생했을 때 이를 해결하기위해 큰 비용이 들게되지만 Flask는 정해진 확장 모듈이 없기
+때문에 다양한 방법으로 해결이 가능합니다.  
+
+Flask는 단 10줄도 안되는 코드로 웹 서버를 구동할 수 있습니다.  
+from flask import Flask 를 시작으로 서버를 시작하는 코드까지 10줄이 되지 않습니다.  
+물론 그만큼 최소한의 패키지로 구성되어있기때문에 Hello World는 간단히 구현 되지만, 상용 웹 서버를 구현할때는 단순하지만은 않습니다.  
+
+Flask에는 ORM (Object relational mapping) 기능이 제공되지 않습니다.  
+그렇기 때문에 개발자가 직접 SQLAlchemy 등 개발자에게 편하거나 익숙한 패키지를 설치하여 사용할 수 있습니다.  
+위에서 언급한대로 Flask는 최소한의 기능만을 제공합니다. 데이터 베이스 연결 외에도 양식 처리, 보안, 인증 등 모두 개발자가 직접 처리해주어야 합니다.  
+즉, django에서는 탄탄한 framework 안에서 다른 설계 패턴으로 벗어날 수 없다는 점을 Flask에서는 직접 새로운 framework로 설계할 수 있다는 장점이 있지만 이제 막 
+파이썬 웹 프레임워크에 진입하는 입장에서는 신경써야할게 한두가지가 아니기때문에 최대 단점으로 다가올 수 있습니다.  
+
+[Google Trends에서의 Django와 Flask 비교](https://trends.google.com/trends/explore?q=Django,Flask)
+
+Note: [ORM 이란?](https://gmlwjd9405.github.io/2019/02/01/orm.html)
+
+# 출처
+
 [점프 투 장고](https://wikidocs.net/78004)  
 [mozilla_Django 소개](https://developer.mozilla.org/ko/docs/Learn/Server-side/Django/Introduction#%EC%9A%94%EC%B2%AD%EC%9D%84_%EC%95%8C%EB%A7%9E%EC%9D%80_%EB%B7%B0%EB%A1%9C_%EC%A0%84%EB%8B%AC_urls.py)  
 [Django 01 - Introduction, 동작원리, 기본설정](https://tothefullest08.github.io/django/2019/02/11/django01/)
