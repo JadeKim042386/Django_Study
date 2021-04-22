@@ -5,8 +5,8 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pybo/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/pybo/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pybo/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/pybo/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pybo/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/pybo/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pybo/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/pybo/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,7 +17,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1rOYMXEKWuy7lsO1H1i6vaafzR1" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -56,5 +58,9 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="922" y="193" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1618848592019" />
+    <state x="242" y="240" key="search.everywhere.popup" timestamp="1619099906511">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="242" y="240" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1619099906511" />
   </component>
 </project>
