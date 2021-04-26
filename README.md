@@ -2,6 +2,7 @@
 =====
 [1. What is Django?](#What-is-Django?)  
 [2. Django vs Flask](#Django-vs-Flask)  
+[3. 장고 개발 환경 준비](#장고-개발-환경-준비)
 
 [출처](#출처)  
 
@@ -109,6 +110,118 @@ Flask에는 ORM (Object relational mapping) 기능이 제공되지 않습니다.
 [Google Trends에서의 Django와 Flask 비교](https://trends.google.com/trends/explore?q=Django,Flask)
 
 Note: [ORM 이란?](https://gmlwjd9405.github.io/2019/02/01/orm.html)
+
+# 장고 개발 환경 준비
+
+## 가상 환경 사용
+파이썬 가상 환경은 파이썬 프로젝트를 진행할 때 독립된 환경을 만들어 주는 고마운 도구다. 예를 들어 파이썬 개발자 A가 2개의 파이썬 프로젝트를 개발하고 관리한다고 가정하자. 파이썬 프로젝트를 각각 P-1, P-2라고 부르겠다. 이때 P-1, P-2에 필요한 파이썬 또는 파이썬 라이브러리의 버전이 다를 수 있다. 이를테면 P-1에는 파이썬 2.7 버전이, P-2에는 파이썬 3.8 버전이 필요할 수 있다. 이때 하나의 데스크톱에 서로 다른 버전의 파이썬을 설치해야 하는 문제가 생긴다. 이처럼 가상 환경을 이용하면 하나의 데스크톱에 서로 다른 버전의 파이썬과 라이브러리를 쉽게 설치해 사용할 수 있다.  
+### 가상 환경 Directory 생성
+```
+C:\Users\pahkey> cd \
+C:\> mkdir venvs
+C:\> cd venvs
+```
+
+### 가상 환경 만들기
+```
+C:\venvs> python -m venv mysite
+```
+venv : python Module  
+mysite : 가상 환경 이름
+
+### 가상 환경 진입 & 탈출
+```
+#진입
+C:\venvs>cd C:\venvs\mysite\Scripts
+C:\venvs\mysite\Scripts> activate
+(mysite) C:\venvs\mysite\Scripts>
+
+#탈출
+(mysite) C:\venvs\mysite\Scripts> deactivate
+```
+
+### 장고 설치
+만들어진 가상 환경 mysite에 장고를 설치한다.
+```
+C:\venvs\mysite\Scripts> activate
+(mysite) C:\venvs\mysite\Scripts> pip install django==3.1.3
+(mysite) C:\venvs\mysite\Scripts> python -m pip install --upgrade pip
+```
+(업데이트 실습을 위해 3.1.3으로 설치 후 최신 버전으로 업데이트)
+
+### Root Directory 생성
+장고 프로젝트는 여러 개가 될 수 있으므로 프로젝트를 모아 둘 프로젝트 루트 디렉터리 생성은 필수다.
+```
+C:\Users\pahke>cd \
+C:\>mkdir projects
+C:\>cd projects
+C:\projects>
+```
+
+### Django Project 생성
+```
+C:\projects>C:\venvs\mysite\Scripts\activate
+(mysite) C:\projects>mkdir mysite
+(mysite) C:\projects>cd mysite
+(mysite) C:\projects\mysite>django-admin startproject config .
+```
+가상 환경 진입 -> mysite Directory 생성 -> mysite Directory 이동 -> 현재 Directory를 Project Directory로 만듬
+
+생성 후 Directory 구조
+```
+C:\projects\mysite
+├── config/
+│      ├─ asgi.py
+│      ├─ settings.py
+│      ├─ urls.py
+│      ├─ wsgi.py
+│      └─ __init__.py
+└── manage.py
+```
+
+### 개발 서버 구동
+```
+(mysite) C:\projects\mysite>python manage.py runserver
+```
+<Ctrl + C> : Exit
+
+### 배치 파일을 사용한 가상 환경 진입
+메모장에 다음과 같이 작성하여 mysite.cmd로 저장한다.
+```
+@echo off
+cd c:/projects/mysite
+c:/venvs/mysite/scripts/activate
+```
+
+PATH 환경 변수 추가  
+![환경 변수 1](https://wikidocs.net/images/page/72377/1-04_4.png)  
+![환경 변수 2](https://wikidocs.net/images/page/72377/1-04_5.png)  
+![환경 변수 3](https://wikidocs.net/images/page/72377/1-04_7.png)  
+
+환경 변수 확인 후 진입
+```
+C:\Users\pahkey>set path
+C:\Users\pahkey> mysite
+(mysite) C:\projects\mysite>
+```
+
+### Pycharm Setting
+![envset1](https://wikidocs.net/images/page/72407/1-05_7.png)  
+![envset2](https://wikidocs.net/images/page/72407/1-05_8.png)  
+![envset3](https://wikidocs.net/images/page/72407/1-05_9.png)  
+
+  *settings.py 파일 수정
+  ./config/settings.py
+  ```
+  (... 생략 ...)
+  # ---------------------------------- [edit] ---------------------------------- #
+  LANGUAGE_CODE = 'ko-kr'
+
+  TIME_ZONE = 'Asia/Seoul'
+  # ---------------------------------------------------------------------------- #
+  (... 생략 ...)
+  ```
+  
 
 # 출처
 
