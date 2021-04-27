@@ -2,7 +2,8 @@
 =====
 [1. What is Django?](#What-is-Django?)  
 [2. Django vs Flask](#Django-vs-Flask)  
-[3. 장고 개발 환경 준비](#장고-개발-환경-준비)
+[3. 장고 개발 환경 준비](#장고-개발-환경-준비)  
+[4. URL과 View](#URL과-View)  
 
 [출처](#출처)  
 
@@ -221,7 +222,83 @@ C:\Users\pahkey> mysite
   # ---------------------------------------------------------------------------- #
   (... 생략 ...)
   ```
+
+# URL과 View
+
+### 앱 생성
+```
+(mysite) C:\projects\mysite>django-admin startapp pybo
+(mysite) C:\projects\mysite>
+```
+### 장고 개발 흐름
+![dev_flow](https://wikidocs.net/images/page/70649/2-01_6.png)  
+
+### config/urls.py 수정
+```
+from django.contrib import admin
+from django.urls import path
+# ---------------------------------- [edit] ---------------------------------- #
+from pybo import views
+# ---------------------------------------------------------------------------- #
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+# ---------------------------------- [edit] ---------------------------------- #    
+    path('pybo/', views.index),
+# ---------------------------------------------------------------------------- #    
+]
+```
+views.index : views.py파일의 index 함수를 의미  
+pybo/ : 호스트명과 포트는 장고가 실행되는 환경에 따라 변하는 값이며 장고가 이미 알고 있는 값이다. 그러므로 urlpatterns에는 호스트명과 포트를 입력하지 않는다. 끝에 '/'를 붙이면 '/'없이 주소를 입력해도 장고가 자동으로 '/'를 붙여준다.  
   
+### pybo/views.py 작성
+```
+# ---------------------------------- [edit] ---------------------------------- #
+from django.http import HttpResponse
+
+
+def index(request):
+    return HttpResponse("안녕하세요 pybo에 오신것을 환영합니다.")
+# ---------------------------------------------------------------------------- #
+```
+request : 장고에 의해 자동으로 전달괴는 HTTP 요청 객체, 사용자가 전달한 데이터를 확인할 떄 사용
+HttpResponse : 페이지 요청에 대한 응답을 할 때 사용하는 장고  
+
+### URL 분리하기
+
+1. config/urls.py 수정
+```
+from django.contrib import admin
+# ---------------------------------- [edit] ---------------------------------- #
+from django.urls import path, include
+# ---------------------------------------------------------------------------- #
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+# ---------------------------------- [edit] ---------------------------------- #
+    path('pybo/', include('pybo.urls')),
+# ---------------------------------------------------------------------------- #    
+]
+```
+path('pybo/', include('pybo.urls')) : 'pybo/'로 시작되는 페이지 요청은 모두 'pybo.urls.py' 파일에 있는 URL 매핑을 참고하여 처리하라는 의미  
+2. pybo/urls.py 생성 & 수정  
+![pybo_urls](https://wikidocs.net/images/page/70649/2-01_7.png)  
+![pybo_urls2](https://wikidocs.net/images/page/70649/2-01_8.png)  
+```
+# ---------------------------------- [edit] ---------------------------------- #
+from django.urls import path
+
+from . import views
+
+urlpatterns = [
+    path('', views.index),
+]
+# ---------------------------------------------------------------------------- #
+```
+'config/urls.py' 파일에서 'pybo/'에 대한 처리를 한 상태에서 'pybo/urls.py' 파일이 실행되므로 첫 번째 매개변수에 'pybo/'가 아닌 빈 문자열('')을 인자로 넘겨준 것이다.  
+
+### URL 매핑 확인 과정
+![url_mapping](https://wikidocs.net/images/page/70649/2-01_10.png)  
 
 # 출처
 
