@@ -3,13 +3,23 @@ from django.http import HttpResponse
 from .models import Question
 from django.utils import timezone
 from .forms import QuestionForm, AnswerForm
+from django.core.paginator import Paginator
 
 def index(request):
     """
     output pybo list
     """
+    #input parameter
+    page = request.GET.get('page', '1') #page
+
+    #check
     question_list = Question.objects.order_by('-create_date')
-    context = {'question_list' : question_list}
+
+    #paging
+    paginator = Paginator(question_list, 10) #10 per page
+    page_obj = paginator.get_page(page)
+
+    context = {'question_list' : page_obj}
 
     return render(request, 'pybo/question_list.html', context)
 

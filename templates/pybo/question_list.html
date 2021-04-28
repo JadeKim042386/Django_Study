@@ -27,6 +27,52 @@
         {% endif %}
         </tbody>
     </table>
+    <!-- 페이징처리 시작 -->
+    <ul class="pagination justify-content-center">
+        <!-- 이전페이지 -->
+        {% if question_list.has_previous %}
+        <li class="page-item">
+            <a class="page-link" href="?page={{ question_list.previous_page_number }}">&laquo;</a>
+        </li>
+        {% if question_list.number > 3 %}
+        <li class="page-item">
+                    <a class="page-link" href="?page=1">1</a>
+                </li>
+        {% if question_list.number > 4 %}
+        <button class="page-item" disabled="">...</button>
+        {% endif %}
+        {% endif %}
+        {% endif %}
+        <!-- 페이지리스트 -->
+        {% for page_number in question_list.paginator.page_range %}
+            {% if question_list.number == page_number %}
+            <li class="page-item active" aria-current="page">
+                            <a class="page-link" href="?page={{ page_number }}">{{ page_number }}</a>
+                        </li>
+            {% elif page_number > question_list.number|add:-3 and page_number < question_list.number|add:3 %}
+            <li class="page-item">
+                            <a class="page-link" href="?page={{ page_number }}">{{ page_number }}</a>
+                        </li>
+            {% endif %}
+        {% endfor %}
+        <!-- 다음페이지 -->
+        {% if question_list.has_next %}
+            {% if question_list.number < question_list.paginator.num_pages|add:-3 %}
+            <button class="page-item" disabled="">...</button>
+            <li class="page-item">
+                            <a class="page-link" href="?page={{ page_number }}">{{ question_list.paginator.num_pages }}</a>
+                        </li>
+            {% elif question_list.number < question_list.paginator.num_pages|add:-2 %}
+            <li class="page-item">
+                            <a class="page-link" href="?page={{ page_number }}">{{ question_list.paginator.num_pages }}</a>
+                        </li>
+            {% endif %}
+            <li class="page-item">
+                    <a class="page-link" href="?page={{ question_list.next_page_number }}">&raquo;</a>
+                </li>
+        {% endif %}
+    </ul>
+    <!-- 페이징처리 끝 -->
     <a href="{% url 'pybo:question_create' %}" class="btn btn-primary">질문 등록하기</a>
 </div>
 {% endblock %}
