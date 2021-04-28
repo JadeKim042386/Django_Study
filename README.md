@@ -2,6 +2,8 @@
 =====
 [1. What is Django?](#What-is-Django?)  
 [2. Django vs Flask](#Django-vs-Flask)  
+[3. 장고 개발 환경 준비](#장고-개발-환경-준비)  
+[4. URL과 View](#URL과-View)  
 
 [출처](#출처)  
 
@@ -109,6 +111,194 @@ Flask에는 ORM (Object relational mapping) 기능이 제공되지 않습니다.
 [Google Trends에서의 Django와 Flask 비교](https://trends.google.com/trends/explore?q=Django,Flask)
 
 Note: [ORM 이란?](https://gmlwjd9405.github.io/2019/02/01/orm.html)
+
+# 장고 개발 환경 준비
+
+## 가상 환경 사용
+파이썬 가상 환경은 파이썬 프로젝트를 진행할 때 독립된 환경을 만들어 주는 고마운 도구다. 예를 들어 파이썬 개발자 A가 2개의 파이썬 프로젝트를 개발하고 관리한다고 가정하자. 파이썬 프로젝트를 각각 P-1, P-2라고 부르겠다. 이때 P-1, P-2에 필요한 파이썬 또는 파이썬 라이브러리의 버전이 다를 수 있다. 이를테면 P-1에는 파이썬 2.7 버전이, P-2에는 파이썬 3.8 버전이 필요할 수 있다. 이때 하나의 데스크톱에 서로 다른 버전의 파이썬을 설치해야 하는 문제가 생긴다. 이처럼 가상 환경을 이용하면 하나의 데스크톱에 서로 다른 버전의 파이썬과 라이브러리를 쉽게 설치해 사용할 수 있다.  
+### 가상 환경 Directory 생성
+```
+C:\Users\pahkey> cd \
+C:\> mkdir venvs
+C:\> cd venvs
+```
+
+### 가상 환경 만들기
+```
+C:\venvs> python -m venv mysite
+```
+venv : python Module  
+mysite : 가상 환경 이름
+
+### 가상 환경 진입 & 탈출
+```
+#진입
+C:\venvs>cd C:\venvs\mysite\Scripts
+C:\venvs\mysite\Scripts> activate
+(mysite) C:\venvs\mysite\Scripts>
+
+#탈출
+(mysite) C:\venvs\mysite\Scripts> deactivate
+```
+
+### 장고 설치
+만들어진 가상 환경 mysite에 장고를 설치한다.
+```
+C:\venvs\mysite\Scripts> activate
+(mysite) C:\venvs\mysite\Scripts> pip install django==3.1.3
+(mysite) C:\venvs\mysite\Scripts> python -m pip install --upgrade pip
+```
+(업데이트 실습을 위해 3.1.3으로 설치 후 최신 버전으로 업데이트)
+
+### Root Directory 생성
+장고 프로젝트는 여러 개가 될 수 있으므로 프로젝트를 모아 둘 프로젝트 루트 디렉터리 생성은 필수다.
+```
+C:\Users\pahke>cd \
+C:\>mkdir projects
+C:\>cd projects
+C:\projects>
+```
+
+### Django Project 생성
+```
+C:\projects>C:\venvs\mysite\Scripts\activate
+(mysite) C:\projects>mkdir mysite
+(mysite) C:\projects>cd mysite
+(mysite) C:\projects\mysite>django-admin startproject config .
+```
+가상 환경 진입 -> mysite Directory 생성 -> mysite Directory 이동 -> 현재 Directory를 Project Directory로 만듬
+
+생성 후 Directory 구조
+```
+C:\projects\mysite
+├── config/
+│      ├─ asgi.py
+│      ├─ settings.py
+│      ├─ urls.py
+│      ├─ wsgi.py
+│      └─ __init__.py
+└── manage.py
+```
+
+### 개발 서버 구동
+```
+(mysite) C:\projects\mysite>python manage.py runserver
+```
+<Ctrl + C> : Exit
+
+### 배치 파일을 사용한 가상 환경 진입
+메모장에 다음과 같이 작성하여 mysite.cmd로 저장한다.
+```
+@echo off
+cd c:/projects/mysite
+c:/venvs/mysite/scripts/activate
+```
+
+PATH 환경 변수 추가  
+![환경 변수 1](https://wikidocs.net/images/page/72377/1-04_4.png)  
+![환경 변수 2](https://wikidocs.net/images/page/72377/1-04_5.png)  
+![환경 변수 3](https://wikidocs.net/images/page/72377/1-04_7.png)  
+
+환경 변수 확인 후 진입
+```
+C:\Users\pahkey>set path
+C:\Users\pahkey> mysite
+(mysite) C:\projects\mysite>
+```
+
+### Pycharm Setting
+![envset1](https://wikidocs.net/images/page/72407/1-05_7.png)  
+![envset2](https://wikidocs.net/images/page/72407/1-05_8.png)  
+![envset3](https://wikidocs.net/images/page/72407/1-05_9.png)  
+
+  *settings.py 파일 수정
+  ./config/settings.py
+  ```
+  (... 생략 ...)
+  # ---------------------------------- [edit] ---------------------------------- #
+  LANGUAGE_CODE = 'ko-kr'
+
+  TIME_ZONE = 'Asia/Seoul'
+  # ---------------------------------------------------------------------------- #
+  (... 생략 ...)
+  ```
+
+# URL과 View
+
+### 앱 생성
+```
+(mysite) C:\projects\mysite>django-admin startapp pybo
+(mysite) C:\projects\mysite>
+```
+### 장고 개발 흐름
+![dev_flow](https://wikidocs.net/images/page/70649/2-01_6.png)  
+
+### config/urls.py 수정
+```
+from django.contrib import admin
+from django.urls import path
+# ---------------------------------- [edit] ---------------------------------- #
+from pybo import views
+# ---------------------------------------------------------------------------- #
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+# ---------------------------------- [edit] ---------------------------------- #    
+    path('pybo/', views.index),
+# ---------------------------------------------------------------------------- #    
+]
+```
+views.index : views.py파일의 index 함수를 의미  
+pybo/ : 호스트명과 포트는 장고가 실행되는 환경에 따라 변하는 값이며 장고가 이미 알고 있는 값이다. 그러므로 urlpatterns에는 호스트명과 포트를 입력하지 않는다. 끝에 '/'를 붙이면 '/'없이 주소를 입력해도 장고가 자동으로 '/'를 붙여준다.  
+  
+### pybo/views.py 작성
+```
+# ---------------------------------- [edit] ---------------------------------- #
+from django.http import HttpResponse
+
+
+def index(request):
+    return HttpResponse("안녕하세요 pybo에 오신것을 환영합니다.")
+# ---------------------------------------------------------------------------- #
+```
+request : 장고에 의해 자동으로 전달괴는 HTTP 요청 객체, 사용자가 전달한 데이터를 확인할 떄 사용
+HttpResponse : 페이지 요청에 대한 응답을 할 때 사용하는 장고  
+
+### URL 분리하기
+
+1. config/urls.py 수정
+```
+from django.contrib import admin
+# ---------------------------------- [edit] ---------------------------------- #
+from django.urls import path, include
+# ---------------------------------------------------------------------------- #
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+# ---------------------------------- [edit] ---------------------------------- #
+    path('pybo/', include('pybo.urls')),
+# ---------------------------------------------------------------------------- #    
+]
+```
+path('pybo/', include('pybo.urls')) : 'pybo/'로 시작되는 페이지 요청은 모두 'pybo.urls.py' 파일에 있는 URL 매핑을 참고하여 처리하라는 의미  
+2. pybo/urls.py 생성 & 수정  
+![pybo_urls](https://wikidocs.net/images/page/70649/2-01_7.png)  
+![pybo_urls2](https://wikidocs.net/images/page/70649/2-01_8.png)  
+```
+# ---------------------------------- [edit] ---------------------------------- #
+from django.urls import path
+
+from . import views
+
+urlpatterns = [
+    path('', views.index),
+]
+# ---------------------------------------------------------------------------- #
+```
+'config/urls.py' 파일에서 'pybo/'에 대한 처리를 한 상태에서 'pybo/urls.py' 파일이 실행되므로 첫 번째 매개변수에 'pybo/'가 아닌 빈 문자열('')을 인자로 넘겨준 것이다.  
+
+### URL 매핑 확인 과정
+![url_mapping](https://wikidocs.net/images/page/70649/2-01_10.png)  
 
 # 출처
 
