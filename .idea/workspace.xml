@@ -64,9 +64,13 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="922" y="193" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1618848592019" />
-    <state x="242" y="240" key="search.everywhere.popup" timestamp="1619099906511">
+    <state x="173" y="140" width="613" height="807" key="find.popup" timestamp="1619705116946">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="242" y="240" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1619099906511" />
+    <state x="173" y="140" width="613" height="807" key="find.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1619705116946" />
+    <state x="242" y="240" key="search.everywhere.popup" timestamp="1619705093597">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="242" y="240" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1619705093597" />
   </component>
 </project>
