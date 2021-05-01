@@ -19,6 +19,7 @@ from django.urls import path, include
 from pybo import views
 
 urlpatterns = [
+    path('pybo/', views.index, name='index'),
     path('admin/', admin.site.urls),
     # path('pybo/', views.index), #path 함수를 사용하여 pybo/ URL과 views.index를 매핑
     path('pybo/', include('pybo.urls')), # pybo 앱 관련 urls.py 파일을 따로 구성

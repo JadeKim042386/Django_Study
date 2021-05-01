@@ -60,7 +60,7 @@ def question_create(request):
             question = form.save(commit=False) #임시 저장 (create_date값이 설정되지 않음)
             question.create_date = timezone.now()
             question.save()
-            return redirect('pybo:index')
+            return redirect('index')
     #질문 등록하기(GET)
     else:
         form = QuestionForm()
