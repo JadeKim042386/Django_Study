@@ -5,6 +5,7 @@
 [3. 장고 개발 환경 준비](#장고-개발-환경-준비)  
 #### Wiki  
 [1. URL과 View](https://github.com/JadeKim042386/Django_Study/wiki/URL%EA%B3%BC-View)  
+[2. Model](https://github.com/JadeKim042386/Django_Study/wiki/Model)
 
 [출처](#출처)  
 
