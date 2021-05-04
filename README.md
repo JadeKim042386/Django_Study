@@ -3,7 +3,8 @@
 [1. What is Django?](#What-is-Django?)  
 [2. Django vs Flask](#Django-vs-Flask)  
 [3. 장고 개발 환경 준비](#장고-개발-환경-준비)  
-[4. URL과 View](https://github.com/JadeKim042386/Django_Study/wiki/URL%EA%B3%BC-View)  
+#### Wiki  
+[1. URL과 View](https://github.com/JadeKim042386/Django_Study/wiki/URL%EA%B3%BC-View)  
 
 [출처](#출처)  
 
