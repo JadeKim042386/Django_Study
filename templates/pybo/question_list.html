@@ -2,6 +2,15 @@
 {% load pybo_filter %}
 {% block content %}
 <div class="container my-3">
+    <!-- 검색 창 -->
+    <div class="row justify-content-end my-3">
+        <div class="col-4 input-group">
+            <input type="text" class="form-control kw" value="{{ kw|default_if_none:'' }}">
+            <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="button" id="btn_search">찾기</button>
+            </div>
+        </div>
+    </div>
     <table class="table">
         <thead>
         <tr class="thead-dark">
@@ -47,7 +56,7 @@
         <!-- 이전페이지 -->
         {% if question_list.has_previous %}
         <li class="page-item">
-            <a class="page-link" href="?page={{ question_list.previous_page_number }}">&laquo;</a>
+            <a class="page-link" data-page="{{ question_list.previous_page_number }}" href="#">&laquo;</a>
         </li>
         {% if question_list.number > 3 %}
         <li class="page-item">
@@ -62,12 +71,12 @@
         {% for page_number in question_list.paginator.page_range %}
             {% if question_list.number == page_number %}
             <li class="page-item active" aria-current="page">
-                            <a class="page-link" href="?page={{ page_number }}">{{ page_number }}</a>
-                        </li>
+                <a class="page-link" data-page="{{ page_number }}" href="#">{{ page_number }}</a>
+            </li>
             {% elif page_number > question_list.number|add:-3 and page_number < question_list.number|add:3 %}
             <li class="page-item">
-                            <a class="page-link" href="?page={{ page_number }}">{{ page_number }}</a>
-                        </li>
+                <a class="page-link" data-page="{{ page_number }}" href="#">{{ page_number }}</a>
+            </li>
             {% endif %}
         {% endfor %}
         <!-- 다음페이지 -->
@@ -75,19 +84,40 @@
             {% if question_list.number < question_list.paginator.num_pages|add:-3 %}
             <button class="page-item" disabled="">...</button>
             <li class="page-item">
-                            <a class="page-link" href="?page={{ question_list.paginator.num_pages }}">{{ question_list.paginator.num_pages }}</a>
-                        </li>
+                <a class="page-link" data-page = "{{ question_list.paginator.num_pages }}" href="#">{{ question_list.paginator.num_pages }}</a>
+            </li>
             {% elif question_list.number < question_list.paginator.num_pages|add:-2 %}
             <li class="page-item">
-                            <a class="page-link" href="?page={{ question_list.paginator.num_pages }}">{{ question_list.paginator.num_pages }}</a>
-                        </li>
+                <a class="page-link" data-page = "{{ question_list.paginator.num_pages }}" href="#">{{ question_list.paginator.num_pages }}</a>
+            </li>
             {% endif %}
             <li class="page-item">
-                    <a class="page-link" href="?page={{ question_list.next_page_number }}">&raquo;</a>
-                </li>
+                <a class="page-link" data-page="{{ question_list.next_page_number }}" href="#">&raquo;</a>
+            </li>
         {% endif %}
     </ul>
     <!-- 페이징처리 끝 -->
     <a href="{% url 'pybo:question_create' %}" class="btn btn-primary">질문 등록하기</a>
 </div>
+<form id="searchForm" method="get" action="{% url 'index' %}">
+    <input type="hidden" id="kw" name="kw" value="{{ kw|default_if_none:'' }}">
+    <input type="hidden" id="page" name="page" value="{{ page }}">
+</form>
+{% endblock %}
+<!-- 자바스크립트 코드 -->
+{% block script %}
+<script type='text/javascript'>
+$(document).ready(function(){
+    $(".page-link").on('click', function() {
+        $("#page").val($(this).data("page"));
+        $("#searchForm").submit();
+    });
+
+    $("#btn_search").on('click', function() {
+        $("#kw").val($(".kw").val());
+        $("#page").val(1);  // 검색버튼을 클릭할 경우 1페이지부터 조회한다.
+        $("#searchForm").submit();
+    });
+});
+</script>
 {% endblock %}
