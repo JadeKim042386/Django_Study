@@ -6,6 +6,9 @@
 #### Wiki  
 [1. URL과 View](https://github.com/JadeKim042386/Django_Study/wiki/URL%EA%B3%BC-View)  
 [2. Model](https://github.com/JadeKim042386/Django_Study/wiki/Model)
+[3. Admin](https://github.com/JadeKim042386/Django_Study/wiki/Admin)
+[4. Question list & detail 구현](https://github.com/JadeKim042386/Django_Study/wiki/Question-list-&-detail-%EA%B5%AC%ED%98%84)
+[5. Remove URL hard coding](https://github.com/JadeKim042386/Django_Study/wiki/Remove-URL-hard-coding)
 
 [출처](#출처)  
 
