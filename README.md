@@ -11,7 +11,8 @@
 [5. Remove URL hard coding](https://github.com/JadeKim042386/Django_Study/wiki/Remove-URL-hard-coding)  
 [6. Create Answer](https://github.com/JadeKim042386/Django_Study/wiki/Create-Answer)  
 [7. CSS 파일 적용](https://github.com/JadeKim042386/Django_Study/wiki/CSS-%ED%8C%8C%EC%9D%BC-%EC%A0%81%EC%9A%A9)  
-[8. Bootstrap](https://github.com/JadeKim042386/Django_Study/wiki/Bootstrap)
+[8. Bootstrap](https://github.com/JadeKim042386/Django_Study/wiki/Bootstrap)  
+[9. 표준 HTML](https://github.com/JadeKim042386/Django_Study/wiki/%ED%91%9C%EC%A4%80-HTML)
 
 [출처](#출처)  
 
