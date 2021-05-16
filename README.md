@@ -3,7 +3,8 @@
 [1. What is Django?](#What-is-Django?)  
 [2. Django vs Flask](#Django-vs-Flask)  
 [3. 장고 개발 환경 준비](#장고-개발-환경-준비)  
-#### Wiki  
+## Wiki  
+### 기본 요소
 [1. URL과 View](https://github.com/JadeKim042386/Django_Study/wiki/URL%EA%B3%BC-View)  
 [2. Model](https://github.com/JadeKim042386/Django_Study/wiki/Model)  
 [3. Admin](https://github.com/JadeKim042386/Django_Study/wiki/Admin)  
@@ -13,8 +14,9 @@
 [7. CSS 파일 적용](https://github.com/JadeKim042386/Django_Study/wiki/CSS-%ED%8C%8C%EC%9D%BC-%EC%A0%81%EC%9A%A9)  
 [8. Bootstrap](https://github.com/JadeKim042386/Django_Study/wiki/Bootstrap)  
 [9. 표준 HTML](https://github.com/JadeKim042386/Django_Study/wiki/%ED%91%9C%EC%A4%80-HTML)  
-[10. question create 구현 & form 적용](https://github.com/JadeKim042386/Django_Study/wiki/question-create-&-form-%EA%B5%AC%ED%98%84)  
-[11. 내비게이션 기능 & include 기능](https://github.com/JadeKim042386/Django_Study/wiki/Add-navbar(%EB%82%B4%EB%B9%84%EA%B2%8C%EC%9D%B4%EC%85%98-%EA%B8%B0%EB%8A%A5)-&-include)
+[10. question create 구현 & form 적용](https://github.com/JadeKim042386/Django_Study/wiki/question-create-&-form-%EA%B5%AC%ED%98%84) 
+### 서비스 개발  
+[1. 내비게이션 기능 & include 기능](https://github.com/JadeKim042386/Django_Study/wiki/Add-navbar(%EB%82%B4%EB%B9%84%EA%B2%8C%EC%9D%B4%EC%85%98-%EA%B8%B0%EB%8A%A5)-&-include)
 
 [출처](#출처)  
 
