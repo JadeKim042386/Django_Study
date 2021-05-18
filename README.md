@@ -17,7 +17,8 @@
 [10. question create 구현 & form 적용](https://github.com/JadeKim042386/Django_Study/wiki/question-create-&-form-%EA%B5%AC%ED%98%84) 
 ### 서비스 개발  
 [1. 내비게이션 기능 & include 기능](https://github.com/JadeKim042386/Django_Study/wiki/Add-navbar(%EB%82%B4%EB%B9%84%EA%B2%8C%EC%9D%B4%EC%85%98-%EA%B8%B0%EB%8A%A5)-&-include)  
-[2. Pagination](https://github.com/JadeKim042386/Django_Study/wiki/Pagination)
+[2. Pagination](https://github.com/JadeKim042386/Django_Study/wiki/Pagination)  
+[3. Template Filter](https://github.com/JadeKim042386/Django_Study/wiki/Template-Filter)
 
 [출처](#출처)  
 
