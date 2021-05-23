@@ -77,7 +77,7 @@
     Note: 장고는 이 구조를 "모델 뷰 템플릿(Model View Template)(MVT)" 아키텍처라고 부릅니다. 이것은 더 익숙한 Model View Controller 아키텍처와
     많은 유사점을 가지고 있습니다.
   
-      ![Django Diagram](https://w.namu.la/s/dea675fca9120cdee8331049e318113fd8b7e1b72b75cbc46854b809784a73c434e9b9abe59be0a41f1b59ace410fc7247db918a595ef5b804799c0bdfedf865e7ea11e1b1044d40ff0fae41a3f27036482abdfe1801a3873cf8f18b2f425f1a)
+      ![Django Diagram](https://namu.wiki/jump/hM%2FVUDCftbDLd5Sks4jMO6ZJTPv2VEEHvcyqD1P4XCbnHfm%2BWrSrVvejFWuv84PVBZloX%2BzNWVE4QT2MZ%2BjFxQ%3D%3D)
   
   - Django의 동작 순서 예시
   
