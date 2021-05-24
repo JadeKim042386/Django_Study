@@ -21,7 +21,8 @@
 [3. Template Filter](https://github.com/JadeKim042386/Django_Study/wiki/Template-Filter)  
 [4. Answer Count Marking](https://github.com/JadeKim042386/Django_Study/wiki/answer-count-marking)  
 [5. login & logout](https://github.com/JadeKim042386/Django_Study/wiki/Implement-login-&-logout)  
-[6. Signup](https://github.com/JadeKim042386/Django_Study/wiki/Signup)
+[6. Signup](https://github.com/JadeKim042386/Django_Study/wiki/Signup)  
+[7. Add Author & '@login_required' Annotation](https://github.com/JadeKim042386/Django_Study/wiki/Add-Author-&-'@login_required'-Annotation)
 
 [출처](#출처)  
 
