@@ -22,7 +22,8 @@
 [4. Answer Count Marking](https://github.com/JadeKim042386/Django_Study/wiki/answer-count-marking)  
 [5. login & logout](https://github.com/JadeKim042386/Django_Study/wiki/Implement-login-&-logout)  
 [6. Signup](https://github.com/JadeKim042386/Django_Study/wiki/Signup)  
-[7. Add Author & '@login_required' Annotation](https://github.com/JadeKim042386/Django_Study/wiki/Add-Author-&-'@login_required'-Annotation)
+[7. Add Author & '@login_required' Annotation](https://github.com/JadeKim042386/Django_Study/wiki/Add-Author-&-'@login_required'-Annotation)  
+[8. Add Author on question and answer](https://github.com/JadeKim042386/Django_Study/wiki/Add-Author-on-question-and-answer)
 
 [출처](#출처)  
 
