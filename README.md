@@ -24,7 +24,7 @@
 [6. Signup](https://github.com/JadeKim042386/Django_Study/wiki/Signup)  
 [7. Add Author & '@login_required' Annotation](https://github.com/JadeKim042386/Django_Study/wiki/Add-Author-&-'@login_required'-Annotation)  
 [8. Add Author on question and answer](https://github.com/JadeKim042386/Django_Study/wiki/Add-Author-on-question-and-answer)  
-[9. Add Modify & Delete](https://github.com/JadeKim042386/Django_Study/wiki/Add--Modify-&-Delete-Function-(%EC%88%98%EC%A0%95-&-%EC%82%AD%EC%A0%9C-%EA%B8%B0%EB%8A%A5-%EC%B6%94%EA%B0%80)
+[9. Add Modify & Delete](https://github.com/JadeKim042386/Django_Study/wiki/Add--Modify-&-Delete-Function-(%EC%88%98%EC%A0%95-&-%EC%82%AD%EC%A0%9C-%EA%B8%B0%EB%8A%A5-%EC%B6%94%EA%B0%80))
 
 [출처](#출처)  
 
